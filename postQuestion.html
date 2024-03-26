@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="postQuestion.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="logo not found"></div>
+            <div class="items">
+                <a href="#" id="Home"><li>Home</li></a>
+                <a href="#" id="Question"><li>Ask a Question ?</li></a>
+                <a href="#"><li>Answer a Question ?</li></a>
+                <a href="#"><li>Top questions</li></a>
+                <a href="#"><li>Profile</li></a>
+                <a href="#"><li>About us</li></a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Ask a Question</h1>
+    </header>
+    <main>
+        <form id="questionForm">
+            <label for="question">Your Question:</label>
+            <textarea id="question" name="question" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Tech Exchange. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const questionForm = document.getElementById("questionForm");
+
+    questionForm.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        const questionInput = document.getElementById("question");
+        const question = questionInput.value;
+
+        // Handle the question here, for example, by sending it to our server and displaying it on the Questions page
+        // console.log("User's question:", question);
+
+        // Reset the form
+        questionForm.reset();
+
+    });
+
+    let currentPage = window.location.pathname;
+
+if (currentPage.includes("postQuestion.html") || currentPage === "/C:/Users/dell/Desktop/Tech%20exchange/postQuestion.html") {
+    let questionBtn = document.getElementById("Question");
+    questionBtn.style.backgroundColor = "rgb(69, 236, 69)";
+}
+});
+</script>
+</html>
